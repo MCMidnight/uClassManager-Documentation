@@ -1,3 +1,52 @@
+BarricadeDataClass [Class]:
+    +Point                                     [get/set]
+    +Angle_X                                   [get/set]
+    +Angle_Y                                   [get/set]
+    +Angle_Z                                   [get/set]
+    +Owner                                     [get/set]
+    +Group                                     [get/set]
+    +ObjActiveDate                             [get/set]
+    +InstanceID                                [get/set]
+    +Barricade                                 [get]
+
+BarricadeDropClass [Class]:
+    +Model                                     [get]
+    +Interactable                              [get]
+    +InstanceID                                [get]
+    +Asset                                     [get]
+
+InteractableClass [Class]:
+    +IsChildOfVehicle                          [get]
+
+Interactable2Class [Class]:
+    +Owner                                     [get]
+    +Group                                     [get]
+    +salvageDurationMultiplier                 [get]
+    +hasOwnership                              [get]
+
+InteractableItemClass [Class]:
+    +Item                                      [get]
+    +Jar                                       [get]
+    +asset                                     [get]
+
+InteractableStorage [Class]:
+    +Rot_z                                     [get]
+    +DisplayItem                               [get]
+    +DisplaySkin                               [get]
+    +DisplayMythic                             [get]
+    +DisplayTags                               [get]
+    +DisplayDynamicProps                       [get]
+    +Rot_comp                                  [get]
+    +Rot_x                                     [get]
+    +Rot_y                                     [get]
+    +ShouldCloseWhenOutsideRange               [get]
+    +IsOpen                                    [get]
+    +Opener                                    [get]
+    +DespawnWhenDestroyed                      [get]
+    +Items                                     [get]
+    +Group                                     [get]
+    +Owner                                     [get]
+    +IsDisplay                                 [get]
 
 InteractableVehicle [Class]:
     +trunkItems                                [get] : ItemsClass
