@@ -1,0 +1,389 @@
+
+InteractableVehicle [Class]:
+    +trunkItems                                [get] : ItemsClass
+    +defaultCenterOfMass                       [get] : Vector3Class
+    +turn                                      [get] : int
+    +instanceID                                [get] : uint
+    +roadIndex                                 [get] : ushort
+    +id                                        [get] : ushort
+    +skinID                                    [get] : ushort
+    +mythicID                                  [get] : ushort
+    +batteryCharge                             [get] : ushort
+    +health                                    [get] : ushort
+    +fuel                                      [get] : ushort
+    +roadPosition                              [get] : float
+    +lastSeat                                  [get] : float
+    +timeInsideSafezone                        [get] : float
+    +lastDead                                  [get] : float
+    +lastExploded                              [get] : float
+    +lastUnderwater                            [get] : float
+    +slip                                      [get] : float
+    +speed                                     [get] : float
+    +physicsSpeed                              [get] : float
+    +factor                                    [get] : float
+    +steer                                     [get] : float
+    +spedometer                                [get] : float
+    +hasDefaultCenterOfMass                    [get] : bool
+    +isBlimpFloating                           [get] : bool
+    +isHooked                                  [get] : bool
+    +isExploded                                [get] : bool
+    +isSiphonable                              [get] : bool
+    +anySeatsOccupied                          [get] : bool
+    +isRepaired                                [get] : bool
+    +isDriven                                  [get] : bool
+    +isDriver                                  [get] : bool
+    +canBeDamaged                              [get] : bool
+    +isDrowned                                 [get] : bool
+    +isUnderwater                              [get] : bool
+    +isBatteryReplaceable                      [get] : bool
+    +isTireReplaceable                         [get] : bool
+    +isGoingToRespawn                          [get] : bool
+    +isRefillable                              [get] : bool
+    +isEmpty                                   [get] : bool
+    +canTurnOnLights                           [get] : bool
+    +canUseHorn                                [get] : bool
+    +isBatteryFull                             [get] : bool
+    +hasBattery                                [get] : bool
+    +isEnginePowered                           [get] : bool
+    +isEngineOn                                [get] : bool
+    +isBoosting                                [get] : bool
+    +usesHealth                                [get] : bool
+    +usesBattery                               [get] : bool
+    +usesFuel                                  [get] : bool
+    +isInsideNoDamageZone                      [get] : bool
+    +isAutoClearable                           [get] : bool
+    +isInsideSafezone                          [get] : bool
+    +canUseTurret                              [get] : bool
+    +sirensOn                                  [get] : bool
+    +isExitable                                [get] : bool
+    +isSkinned                                 [get] : bool
+    +isLocked                                  [get] : bool
+    +taillightsOn                              [get] : bool
+    +headlightsOn                              [get] : bool
+    +isDead                                    [get] : bool
+    +tireAliveMask                             [get/set] : byte
+    +asset                                     [get] : VehicleAssetClass
+    +tires                                     [get] : ExpressionValue
+    +turrets                                   [get] : ExpressionValue
+    +passengers                                [get] : ExpressionValue
+    +headlights                                [get] : TransformClass
+    +taillights                                [get] : TransformClass
+    +lockedGroup                               [get] : string
+    +lockedOwner                               [get] : string
+
+player [Class]:
+    +player            [get]      : uPlayer
+
+uBarricade [Class]:
+    +state
+    +isDead                                    [get] : boolean
+    +isRepaired                                [get] : boolean
+    +asset                                     [???] : ???
+
+uItem [Class]:
+    +amount                                    [get] : byte
+    +durability                                [get] : byte
+    +metadata(THIS IS BROKEN)
+    +getAsset                                  [get] : ???
+
+uPlayer [Class]:
+    +adjustStanceOrTeleportIfStuck()           : boolean
+    +isPluginWidgetFlagActive(flag)            : boolean
+    +teleportToBed()                           : boolean
+    +teleportToLocation(position, yaw)         : boolean
+    +teleportToPlayer(otherPlayer)             : boolean
+    +teleportToRandomSpawnPoint()              : boolean
+    +disableHeadlamp()                         : void
+    +disableItemSpotLight()                    : void
+    +disablePluginWidgetFlag(flag)             : void
+    +enablePluginWidgetFlag(flag)              : void
+    +save()                                    : void
+    +sendAchievementUnlocked(id)               : void
+    +sendBrowserRequest(msg, url)              : void
+    +sendMessage(playerMessage)                : void
+    +sendRelayToServer(ip, port, password, shouldShowMenu) : void
+    +sendRelayToServer(ip, port, password)     : void
+    +sendKillStat(kill)                        : void
+    +sendPlayerStat(stat)                      : void
+    +sendTeleport(position, angle)             : void
+    +sendTerminalRelay(internalMessage)        : void
+    +ServerShowHint(message, durationSeconds)  : void
+    +setAllPluginWidgetFlags(newFlags)         : void
+    +setPluginWidgetFlag(flag, active)         : void
+    +teleportToLocationUnsafe(position, yaw)   : void
+    +updateGlassesLights(on)                   : void
+    +first                                     [get] : transform
+    +third                                     [get] : transform
+    +maxRateLimitedActionsPerSecond            [get] : uint
+    +agro                                      [get] : int
+    +wantsBattlEyeLogs                         [get] : boolean
+    +isSpotOn                                  [get] : boolean
+    +inPluginModal                             [get] : boolean
+    +pluginWidgetFlags                         [get] : string
+    +AdminUsageFlags                           [get] : string
+    +character                                 [get] : transform
+    +rateLimitedActionsCredits                 [get] : float
+    +life                                      [get] : playerLife
+    +clothing                                  [get] : playerClothing
+    +inventory                                 [get] : playerInventory
+    +equipment                                 [get] : playerEquipment
+    +crafting                                  [get] : playerCrafting
+    +skills                                    [get] : playerSkills
+    +movement                                  [get] : playerMovement
+    +look                                      [get] : playerLook
+    +stance                                    [get] : playerStance
+    +input                                     [get] : playerInput
+    +voice                                     [get] : playerVoice
+    +interact                                  [get] : playerInteract
+    +animator                                  [get] : playerAnimator
+    +workzone                                  [get] : playerWorkzone
+    +quests                                    [get] : playerQuests
+
+uStructure [Class]:
+    +isDead                                    [get] : boolean
+    +isRepaired                                [get] : boolean
+    +asset                                     [get] : ItemStructureAssetClass
+
+uVector3 [Class]:
+    +normalized                                [get] : 
+    +magnitude                                 [get] : float
+    +sqrMagnitude                              [get] : float
+    +right                                     [get] : 
+    +left                                      [get] : 
+    +up                                        [get] : 
+    +back                                      [get] : 
+    +forward                                   [get] : 
+    +one                                       [get] : 
+    +zero                                      [get] : 
+    +negativeInfinity                          [get] : 
+    +positiveInfinity                          [get] : 
+    +down                                      [get] : 
+
+uAnimal [Class]:
+    +isDead                                    [get] : boolean
+    +isUpdated                                 [get] : boolean
+    +isHunting                                 [get] : boolean
+    +isFleeing                                 [get] : boolean
+    +index                                     [get] : ushort
+    +target                                    [get] : Vector3Class
+    +lastDead                                  [get] : float
+    +id                                        [get] : ushort
+
+uZombie [Class]:
+    +isDead                                    [get] : boolean
+    +isUpdated                                 [get] : boolean
+    +idleAnim                                  [get] : string
+    +gear                                      [get] : byte
+    +hat                                       [get] : byte
+    +shirt                                     [get] : byte
+    +pants                                     [get] : byte
+    +speciality                                [get] : string
+    +type                                      [get] : byte
+    +isMega                                    [get] : boolean
+    +isBoss                                    [get] : boolean
+    +isRadioactive                             [get] : boolean
+    +isHyper                                   [get] : boolean
+    +isHunting                                 [get] : boolean
+    +lastDead                                  [get] : byte
+    +idle                                      [get] : byte
+    +move                                      [get] : byte
+    +bound                                     [get] : byte
+    +isCutesy                                  [get] : boolean
+    +id                                        [get] : ushort
+
+PlayerAnimator [Class]:
+    +AddBayonetViewmodelCameraOffset(fling_x, fling_y, fling_z)         : void
+    +AddRecoilViewmodelCameraOffset(shake_x, shake_y, shake_z)          : void
+    +AddRecoilViewmodelCameraRotation(cameraYaw, cameraPitch)           : void
+    +checkExists(name)                                                  : boolean
+    +GetAnimationLength(name, scaled)                                   : float
+    +getAnimationLength(name)                                           : float
+    +load()                                                             : void
+    +mixAnimation(name, mixLeftShoulder, mixRightShoulder)              : void
+    +mixAnimation(name, mixLeftShoulder, mixRightShoulder, mixSkull)    : void
+    +mixAnimation(name)                                                 : void
+    +NotifyClothingIsVisible()                                          : void
+    +play(name, smooth)                                                 : void
+    +save()                                                             : void
+    +sendGesture(gesture, all)                                          : void
+    +setAnimationSpeed(name, speed)                                     : void
+    +simulate(simulation, inputLeanLeft, inputLeanRight)                : void
+    +stop(name)                                                         : void
+    +SAVEDATA_VERSION                                                   [get] : byte
+    +CaptorItem                                                         [get] : ushort
+    +CaptorID                                                           [get] : string
+    +ViewmodelItemInertiaMask                                           [get] : Vector3Class
+    +ViewmodelExplosionSmoothingSpeed                                   [get] : float
+    +RecoilViewmodelCameraMask                                          [get] : Vector3Class
+    +ViewmodelOffsetPreferenceMultiplier                                [get] : float
+    +ViewmodelSwayMultiplier                                            [get] : float
+    +ScopeSway                                                          [get] : Vector3Class
+    +TurretViewmodelCameraLocalPositionOffset                           [get] : Vector3Class
+    +ViewmodelCameraLocalPositionOffset                                 [get] : Vector3Class
+    +ViewmodelCameraTransform                                           [get] : TransformClass
+    +ViewmodelParentTransform                                           [get] : TransformClass
+    +CaptorStrength                                                     [get] : ushort
+    +Speed                                                              [get] : float
+    +FirstSkeleton                                                      [get] : TransformClass
+    +ThirdSkeleton                                                      [get] : TransformClass
+    +LeanLeft                                                           [get] : boolean
+    +Roll                                                               [get] : float
+    +Tilt                                                               [get] : float
+    +Bob                                                                [get] : float
+    +Gesture                                                            [get] : string
+    +LeanRight                                                          [get] : boolean
+    +Lean                                                               [get] : int
+    +Shoulder                                                           [get] : float
+    +Side                                                               [get] : boolean
+    +Shoulder2                                                          [get] : float
+
+PlayerClothing [Class]:
+    +AskWearBackpack(id, quality, state, playEffect)                   : void
+    +AskWearGlasses(id, quality, state, playEffect)                    : void
+    +AskWearHat(id, quality, state, playEffect)                        : void
+    +AskWearMask(id, quality, state, playEffect)                       : void
+    +AskWearPants(id, quality, state, playEffect)                      : void
+    +AskWearShirt(id, quality, state, playEffect)                      : void
+    +AskWearVest(id, quality, state, playEffect)                       : void
+    +Load()                                                            : void
+    +Save()                                                            : void
+    +SendSwapBackpack(page, x, y)                                      : void
+    +SendSwapFace(index)                                               : void
+    +SendSwapGlasses(page, x, y)                                       : void
+    +SendSwapHat(page, x, y)                                           : void
+    +SendSwapMask(page, x, y)                                          : void
+    +SendSwapPants(page, x, y)                                         : void
+    +SendSwapShirt(page, x, y)                                         : void
+    +SendSwapVest(page, x, y)                                          : void
+    +SendUpdateBackpackQuality()                                       : void
+    +SendUpdateGlassesQuality()                                        : void
+    +SendUpdateHatQuality()                                            : void
+    +SendUpdateMaskQuality()                                           : void
+    +SendUpdatePantsQuality()                                          : void
+    +SendUpdateShirtQuality()                                          : void
+    +SendUpdateVestQuality()                                           : void
+    +SendVisualToggle(type)                                            : void
+    +ServerSetFace(index)                                              : boolean
+    +ServerSetVisualToggleState(type, isVisible)                       : void
+    +UpdateClothes(newShirt, newShirtQuality, newShirtState,
+                  newPants, newPantsQuality, newPantsState, newHat,
+                  newHatQuality, newHatState, newBackpack,
+                  newBackpackQuality, newBackpackState, newVest,
+                  newVestQuality, newVestState, newMask,
+                  newMaskQuality, newMaskState, newGlasses,
+                  newGlassesQuality, newGlassesState)                  : void
+    +UpdateMaskQuality()                                               : void
+    +SAVEDATA_VERSION                                                  [get] : byte
+    +GlassesState                                                      [get] : ExpressionValue
+    +VestState                                                         [get] : ExpressionValue
+    +BackpackState                                                     [get] : ExpressionValue
+    +HatState                                                          [get] : ExpressionValue
+    +PantsState                                                        [get] : ExpressionValue
+    +ShirtState                                                        [get] : ExpressionValue
+    +GlassesQuality                                                    [get] : byte
+    +MaskQuality                                                       [get] : byte
+    +VestQuality                                                       [get] : byte
+    +BackpackQuality                                                   [get] : byte
+    +MaskState                                                         [get] : ExpressionValue
+    +PantsQuality                                                      [get] : byte
+    +HatQuality                                                        [get] : byte
+    +ShirtQuality                                                      [get] : byte
+    +VisualHat                                                         [get] : int
+    +VisualPants                                                       [get] : int
+    +VisualShirt                                                       [get] : int
+    +IsSkinned                                                         [get] : boolean
+    +IsMythic                                                          [get] : boolean
+    +IsVisual                                                          [get] : boolean
+    +VisualBackpack                                                    [get] : int
+    +VisualVest                                                        [get] : int
+    +Hair                                                              [get] : byte
+    +VisualGlasses                                                     [get] : int
+    +Color                                                             [get] : string
+    +Skin                                                              [get] : string
+    +VisualMask                                                        [get] : int
+    +Face                                                              [get] : byte
+    +Glasses                                                           [get] : ushort
+    +Beard                                                             [get] : byte
+    +Vest                                                              [get] : ushort
+    +Backpack                                                          [get] : ushort
+    +Hat                                                               [get] : ushort
+    +Pants                                                             [get] : ushort
+    +Shirt                                                             [get] : ushort
+    +Mask                                                              [get] : ushort
+
+PlayerEquipment [Class]:
+    +ApplyMythicVisual()                                                : void
+    +ApplySkinVisual()                                                  : void
+    +CheckSelection(page, x, y)                                         : boolean
+    +CheckSelection(page)                                               : boolean
+    +Dequip()                                                           : void
+    +Equip(page, x, y)                                                  : void
+    +GetUseableRagdollEffect()                                          : string
+    +GetUseableStatTrackerValue()                                       : ExpressionValue
+    +Inspect()                                                          : void
+    +IsItemHotkeyed(page, index, jar)                                   : boolean
+    +SendSlot(slot)                                                     : void
+    +SendUpdateQuality()                                                : void
+    +SendUpdateState()                                                  : void
+    +ServerBindItemHotkey(hotkeyIndex, expectedItem, page, x, y)        : void
+    +ServerBindItemHotkey(hotkeyIndex, expectedItemGuid, page, x, y)    : void
+    +ServerBindItemHotkey(hotkeyIndex, id, page, x, y)                  : void
+    +ServerClearItemHotkey(hotkeyIndex)                                 : void
+    +ServerEquip(page, x, y)                                            : void
+    +Simulate(simulation, inputPrimary, inputSecondary, inputSteady)    : void
+    +Tock(clock)                                                        : void
+    +TurretDequipClient()                                               : void
+    +TurretDequipServer()                                               : void
+    +TurretEquipClient()                                                : void
+    +TurretEquipServer(id, state)                                       : void
+    +Uninspect()                                                        : void
+    +UpdateQuality()                                                    : void
+    +UpdateState()                                                      : void
+    +Use()                                                              : void
+    +UseStepA()                                                         : void
+    +UseStepB()                                                         : void
+    +SAVEDATA_VERSION                                                   [get] : byte
+    +WasTryingToSelect                                                  [get] : boolean
+    +IsBusy                                                             [get] : boolean
+    +CanEquip                                                           [get] : boolean
+    +CharacterSecondaryMeleeSlot                                        [get] : TransformClass
+    +CharacterPrimarySmallGunSlot                                       [get] : TransformClass
+    +CharacterPrimaryLargeGunSlot                                       [get] : TransformClass
+    +CharacterPrimaryMeleeSlot                                          [get] : TransformClass
+    +ThirdSecondaryGunSlot                                              [get] : TransformClass
+    +ThirdSecondaryMeleeSlot                                            [get] : TransformClass
+    +ThirdPrimarySmallGunSlot                                           [get] : TransformClass
+    +CharacterSecondaryGunSlot                                          [get] : TransformClass
+    +ThirdPrimaryLargeGunSlot                                           [get] : TransformClass
+    +Useable                                                            [get] : UseableClass
+    +Asset                                                              [get] : ItemAssetClass
+    +CharacterModel                                                     [get] : TransformClass
+    +ThirdModel                                                         [get] : TransformClass
+    +FirstModel                                                         [get] : TransformClass
+    +Quality                                                            [get] : byte
+    +State                                                              [get] : ExpressionValue
+    +ThirdPrimaryMeleeSlot                                              [get] : TransformClass
+    +FirstLeftHook                                                      [get] : TransformClass
+    +ThirdLeftHook                                                      [get] : TransformClass
+    +CanInspect                                                         [get] : boolean
+    +IsInspecting                                                       [get] : boolean
+    +LastPunching                                                       [get] : float
+    +Equipped_y                                                         [get] : byte
+    +Equipped_x                                                         [get] : byte
+    +FirstRightHook                                                     [get] : TransformClass
+    +EquippedPage                                                       [get] : byte
+    +IsTurret                                                           [get] : boolean
+    +IsEquipAnimationFinished                                           [get] : boolean
+    +ItemID                                                             [get] : ushort
+    +Hotkeys                                                            [get] : ExpressionValue
+    +CharacterRightHook                                                 [get] : TransformClass
+    +CharacterLeftHook                                                  [get] : TransformClass
+    +ThirdRightHook                                                     [get] : TransformClass
+    +IsUseableShowingMenu                                               [get] : boolean
+    +HasValidUseable                                                    [get] : boolean
+
+PlayerCrafting [Class]:
+    +removeItem(page, jar)                         : void
+    +sendCraft(id, index, force)                   : void
+    +sendStripAttachments(page, x, y)              : void
+    +ServerRefreshOwnerCrafting()                  : void
