@@ -15,6 +15,12 @@ BarricadeDropClass [Class]:
     +InstanceID                                [get]
     +Asset                                     [get]
 
+ItemsClass [Class]:
+    +width                                     [get]
+    +page                                      [get]
+    +height                                    [get]
+    +Items                                     [get]
+
 InteractableClass [Class]:
     +IsChildOfVehicle                          [get]
 
@@ -123,16 +129,48 @@ InteractableVehicle [Class]:
 player [Class]:
     +player            [get]      : uPlayer
 
+PlayerVoice [Class]:
+    +HasUseableWalkieTalkie                    [get] : bool
+    +IsTalking                                 [get] : bool
+    +CanHearRadio                              [get] : bool
+    +HasEarpiece                               [get] : bool
+
+PlayerLook [Class]:
+    +isIgnoringInput                           [get] : bool
+    +isSmoothing                               [get] : bool
+    +isFocusing                                [get] : bool
+    +isLocking                                 [get] : bool
+    +isTracking                                [get] : bool
+    +isOrbiting                                [get] : bool
+    +orbitPosition                             [get] : Vector3Class
+    +lockPosition                              [get] : Vector3Class
+    +orbitSpeed                                [get] : float
+    +perspective                               [get] : string
+    +isCam                                     [get] : bool
+    +areSpecStatsVisible                       [get] : bool
+    +orbitYaw                                  [get] : float
+    +orbitPitch                                [get] : float
+    +look_y                                    [get] : float
+    +heightLook                                [get] : float
+    +yaw                                       [get] : float
+    +pitch                                     [get] : float
+    +aim                                       [get] : TransformClass
+    +isScopeActive                             [get] : bool
+    +canUseFreecam                             [get] : bool
+    +look_x                                    [get] : float
+    +canUseSpecStats                           [get] : bool
+    +canUseWorkzone                            [get] : bool
+
 uBarricade [Class]:
     +state
     +isDead                                    [get] : boolean
     +isRepaired                                [get] : boolean
-    +asset                                     [???] : ???
+    +asset                                     [get] : ItemBarricadeAssetClass
 
 uItem [Class]:
     +amount                                    [get] : byte
-    +durability                                [get] : byte
-    +metadata(THIS IS BROKEN)
+    +durability                                [get/set] : byte
+    +metadata(THIS IS BROKEN)                  [get] : byte
     +getAsset                                  [get] : ???
 
 uPlayer [Class]:
